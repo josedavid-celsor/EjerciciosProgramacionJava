@@ -16,14 +16,19 @@ import java.util.Scanner;
  */
 public class Calculadora {
 
-    public static int comprobarNumero(int min, int max) {
+    public static int pedirrango(int min, int max) {
+
         Scanner teclado = new Scanner(System.in);
-        int numero = teclado.nextInt();
-        if (numero < min && numero > max) {
-            return numero;
-        } else {
-            return numero;
-        }
+        int valor;
+
+        do {
+            System.out.println("Dime un valor entre " + min + " y " + max);
+            valor = teclado.nextInt();
+            if (valor < min || valor > max) {
+                System.out.println("ERROR: Numero no válido.");
+            }
+        } while (valor < min || valor > max);
+        return valor;
 
     }
 
@@ -41,87 +46,84 @@ public class Calculadora {
         System.out.println("8.Senp,Coseno y Tangente");
         System.out.println("9.Salir");
         opcion = teclado.nextInt();
-        return opcion;
+        return pedirrango(1, 9);
     }
 
-    public static int suma(int a, int b) {
+    public static void suma() {
 
         Scanner teclado = new Scanner(System.in);
         System.out.println("Dime A");
-        a = teclado.nextInt();
+        int a = teclado.nextInt();
 
         System.out.println("Dime B");
-        b = teclado.nextInt();
+        int b = teclado.nextInt();
 
-        return a + b;
+        int suma =  a +b;
+        
+        System.out.println("El resultado es " + suma);
     }
 
-    public static int resta(int a, int b) {
+    public static void resta() {
 
         Scanner teclado = new Scanner(System.in);
         System.out.println("Dime A");
-        a = teclado.nextInt();
+        int a = teclado.nextInt();
 
         System.out.println("Dime B");
-        b = teclado.nextInt();
+        int b = teclado.nextInt();
+        
+        int resta = a - b;
 
-        return a - b;
+        System.out.println("El resultado es " + resta);
     }
 
-    public static int multiplicacion(int a, int b) {
+    public static void multiplicacion() {
 
         Scanner teclado = new Scanner(System.in);
         System.out.println("Dime A");
-        a = teclado.nextInt();
+        int a = teclado.nextInt();
 
         System.out.println("Dime B");
-        b = teclado.nextInt();
+        int b = teclado.nextInt();
 
-        return a * b;
+        int  multiplicacion = a * b;
+        System.out.println("El resultado es " + multiplicacion);
     }
 
-    public static int Division(int a, int b) {
+    public static void Division() {
 
+        int division;
         Scanner teclado = new Scanner(System.in);
         System.out.println("Dime A");
-        a = teclado.nextInt();
+        int a = teclado.nextInt();
 
         System.out.println("Dime B");
-        b = teclado.nextInt();
+        int b = teclado.nextInt();
 
         if (b != 0) {
-            return a / b;
+            division = a / b;
+            System.out.println("EL resultado es " + division);
         } else {
-            return 0;
+            System.out.println("Error b no es diferente a 0");
         }
     }
+    
+    public static void AreaRectangulo() {
+        
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Dime base del rectangulo");
+        int a = teclado.nextInt();
 
-    public static void main(String[] args) {
+        System.out.println("Dime altura del rectangulo ");
+        int b = teclado.nextInt();
 
-        int opcion = menu();
-        boolean salir = false;
-
-        switch (opcion) {
-
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            case 5:
-                break;
-            case 6:
-                break;
-            case 7:
-                break;
-            case 8:
-                break;
-            case 9:
-                break;
-        }
-
+        int  multiplicacion = a * b;
+        System.out.println("El resultado es " + multiplicacion);
     }
 }
+
+
+
+    
+       
+
