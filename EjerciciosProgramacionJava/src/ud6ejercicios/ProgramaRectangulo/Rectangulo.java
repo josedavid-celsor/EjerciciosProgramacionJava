@@ -42,6 +42,15 @@ public class Rectangulo {
         }
     }
     
+     public void setY1Y2(int y1, int y2) {
+        if(y2 < y1){
+            this.y1 = y1;
+            this.y2 = y2;
+        } else{
+            System.out.println("ERROR");
+        }
+    }
+    
 
 
     public void setCoordenadas(int x1, int y1, int x2, int y2) {
