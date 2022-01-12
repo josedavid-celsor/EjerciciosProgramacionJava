@@ -9,8 +9,9 @@ public class Main {
         
         Punto c = new Punto (-3, 7);
         
+        System.out.println("La diferencia es: " + c.distancia(b));
         System.out.println("Las coordenadas del punto a  son: " + a.getX() + "," + a.getY());
-        System.out.println("Las coordenadas del punto b  son: " + b.getX() + "," + b.getY());
-        System.out.println("Las coordenadas del punto c  son: " + c.getX() + "," + c.getY());
+       /* System.out.println("Las coordenadas del punto b  son: " + b.getX() + "," + b.getY());
+        System.out.println("Las coordenadas del punto c  son: " + c.getX() + "," + c.getY());*/
     }
 }

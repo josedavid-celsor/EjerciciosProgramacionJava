@@ -6,48 +6,41 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
-        Persona jose = new Persona();
+        
 
         System.out.println("Nombre:");
-        jose.setNombre(teclado.nextLine());
+        String n = teclado.nextLine();
 
         System.out.println("Apellido:");
-        jose.setApellido(teclado.nextLine());
+        String a = teclado.nextLine();
 
         System.out.println("DNI:");
-        jose.setDNI(teclado.nextLine());
+        String d = teclado.nextLine();
         
         System.out.println("Edad:");
-        jose.setEdad(teclado.nextInt());   
+        int e = teclado.nextInt();
+        
+        Persona jose = new Persona(n,a,d,e);
         
         System.out.println("Nombre:" + jose.getNombre() + " Apellido: " + jose.getApellido() + " DNI: " + jose.getDNI() + " Edad: " + jose.getEdad());
         
-        if (jose.getEdad() < 18){
-            System.out.println("Es menor");
-        } else{
-            System.out.println("Es mayor");
-        }
-        
-        Persona iris = new Persona();
-
         System.out.println("Nombre:");
-        iris.setNombre(teclado.nextLine());
+        String n1 = teclado.nextLine();
 
         System.out.println("Apellido:");
-        iris.setApellido(teclado.nextLine());
+        String a1 = teclado.nextLine();
 
         System.out.println("DNI:");
-        iris.setDNI(teclado.nextLine());
+        String d1 = teclado.nextLine();
         
         System.out.println("Edad:");
-        iris.setEdad(teclado.nextInt());   
+        int e1 = teclado.nextInt();
+       
+        Persona iris = new Persona(n1, a1, d1, e1);
         
         System.out.println("Nombre:" + iris.getNombre() + " Apellido: " + iris.getApellido() + " DNI: " + iris.getDNI() + " Edad: " + iris.getEdad());
+          
         
-        if (iris.getEdad() < 18){
-            System.out.println("Es menor");
-        } else{
-            System.out.println("Es mayor");
-        }
+        
     }
 }
