@@ -3,16 +3,19 @@ package ud6ejercicios.ProgramaArticulo;
 public class Articulo {
 
     private String nombre;
-    private int precio, iva, resto;
+    private int precio, tipo, resto;
+    private final double iva = 0.21;
+    private final double iva2 = 0.10;
+    private final double iva3 = 0.04;
 
     public Articulo(String nombre, int precio, int iva, int resto) {
 
         if (nombre.equals("") && precio != 0) {
-            System.out.println("ERROR");
+            System.err.println("ERROR");
         } else {
             this.nombre = nombre;
             this.precio = precio;
-            this.iva = iva;
+            this.tipo = iva;
             this.resto = resto;
         }
 
@@ -27,7 +30,7 @@ public class Articulo {
     }
 
     public int getIva() {
-        return iva;
+        return tipo;
     }
 
     public int getResto() {
@@ -37,13 +40,13 @@ public class Articulo {
     public void NuevoArticulo(String nombre, int precio, int iva, int resto) {
         this.nombre = nombre;
         this.precio = precio;
-        this.iva = iva;
+        this.tipo = tipo;
         this.resto = resto;
     }
 
     public void setNombre(String nombre) {
         if (nombre.equals("")) {
-            System.out.println("ERROR");
+            System.err.println("ERROR");
         } else {
             this.nombre = nombre;
         }
@@ -51,31 +54,32 @@ public class Articulo {
 
     public void setPrecio(int precio) {
         if (precio != 0) {
-            System.out.println("ERROR");
+            System.err.println("ERROR");
         } else {
             this.precio = precio;
         }
     }
 
-    public void setIva(int iva) {
-        if (iva != 0) {
-            System.out.println("ERROR");
-        } else {
-            this.iva = iva;
-        }
-    }
+ 
 
     public void setResto(int resto) {
         if (resto != 0) {
-            System.out.println("ERROR");
+            System.err.println("ERROR");
         } else {
             this.resto = resto;
         }
     }
 
     public double getPVP() {
-        double PVP = precio + (iva / 100) * precio;
-        return PVP;
+        double precio = 0;
+        switch(tipo){
+            case 1: precio = (this.precio * iva) + this.precio;
+            case 2: precio = (this.precio * iva2) + this.precio;
+            case 3: precio = (this.precio * iva3) + this.precio;
+            break;
+        }
+        return precio;
+       
     }
 
     public double getPVPDescuento(double descuento) {

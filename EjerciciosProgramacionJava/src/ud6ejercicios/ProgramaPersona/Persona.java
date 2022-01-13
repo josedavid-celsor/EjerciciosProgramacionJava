@@ -5,11 +5,18 @@ public class Persona {
     private String nombre, apellido;
     private final String dni;
     private int edad;
+    private final int mayorDeEdad = 18;
 
     public Persona(String nombre, String apellido, String dni, int edad) {
+        
+        if(validarDNI(dni)){
+            this.dni = dni;
+        }else{
+            this.dni = "Vaciar";
+            System.err.println("Error");
+        }
         this.nombre = nombre;
         this.apellido = apellido;
-        this.dni = dni;
         this.edad = edad;
     }
 
@@ -45,7 +52,7 @@ public class Persona {
 
     public boolean esMayor(int e) {
 
-        if (e < 18) {
+        if (e < mayorDeEdad) {
             return false;
         } else {
             return true;
@@ -60,25 +67,33 @@ public class Persona {
             return true;
         }
     }
-    
-    public int diferenciaEdad(Persona p){
-        
+
+    public int diferenciaEdad(Persona p) {
+
         int diff = 0;
-                
-        if(this.edad > p.edad){
+
+        if (this.edad > p.edad) {
             diff = this.edad - p.edad;
-        } else{
+        } else {
             diff = p.edad - this.edad;
         }
-        
+
         return diff;
     }
-   /* public static boolean validarDNI(String dni) {
 
-        if (dni.contains()) {
-            
+    public static boolean validarDNI(String dni) {
+
+        boolean valido = false;
+        String num = dni.substring(0, (dni.length()-1));
+        int numeros;
+        try{
+            numeros = Integer.parseInt(num);
+            valido = true;
+        }catch(Exception e){
+            valido = false;
         }
-    }*/
+        return valido;
+    }
 
     public void imprimir(Persona p) {
         System.out.println("Nombre:" + p.nombre + " Apellido: " + p.apellido + " DNI: " + p.dni + " Edad: " + p.edad);

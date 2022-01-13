@@ -42,9 +42,9 @@ public class Punto {
         return resultado;
     }
     
-    public static CrearPuntoAleatorio(){
-        p.Punto((int) (Math.random()*(100-(-100)+1)+(-100)), (int)(Math.random()*(100-(-100)+1)+(-100)));
-      
+    public static Punto CrearPuntoAleatorio(){
+        Punto p = new Punto((int) (Math.random()*(100-(-100)+1)+(-100)), (int)(Math.random()*(100-(-100)+1)+(-100)));
+        return p;
     }
 
 }
