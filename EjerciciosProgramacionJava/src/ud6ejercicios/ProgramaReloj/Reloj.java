@@ -107,4 +107,20 @@ public class Reloj {
             segundos += 1;
         }
     }
+    
+    //metodo tick 
+    public void tick(int s){
+        segundos += s;
+        if (segundos >= 60) {
+            int diff = segundos / 60;
+            segundos -= (60*diff);
+            minutos += diff;
+        }
+        if (minutos >= 60){
+            int diff = minutos / 60;
+            minutos = minutos % 60;
+            
+            hora = (hora + diff) % 24;
+        }
+    }
 }

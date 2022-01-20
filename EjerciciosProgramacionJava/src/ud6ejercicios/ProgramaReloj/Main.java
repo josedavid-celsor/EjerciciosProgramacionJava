@@ -24,7 +24,7 @@ public class Main {
         }
 
         for (int i = 0; i < reloj.length; i++) {
-            
+
             System.out.println("Sumando 60 ticks");
             for (int j = 0; j <= 60; j++) {
                 reloj[i].tick();
@@ -33,15 +33,22 @@ public class Main {
             reloj[i].imprime_hora();
             System.out.println("***************");
         }
-
+        
+        System.out.println("Pasada una hora");
         for (int i = 0; i < reloj.length; i++) {
-            for (int j = 0; j < reloj.length; j++) {
-                Reloj reloj1 = reloj[j];
+            for (int j = reloj[i].getMinutos(); j < 3600; j++) {
+                reloj[i].tick();
 
             }
 
         }
 
-    }
+        for (int i = 0; i < reloj.length; i++) {
+            for (int j = reloj[i].getMinutos(); j < 3600; j++) {
+                reloj[i].tick();
 
+            }
+
+        }
+    }
 }
