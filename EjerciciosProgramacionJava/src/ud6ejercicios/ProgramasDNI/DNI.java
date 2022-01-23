@@ -4,9 +4,9 @@ public class DNI {
 
     private int DNI;
 
-    public DNI(int dni) {
+    public DNI (int dni) {
         this.DNI = dni;
-        imprime();
+       
 
     }
 
@@ -34,6 +34,18 @@ public class DNI {
     public String getNIF(){
         String dni = String.valueOf(DNI);
         return dni + getLetra();
+    }
+    
+    //si empieza con 0 el 0 no se pone al principio
+    public DNI newRandomDNI(){
+        String a = "";
+        for (int i = 0; i < 8; i++) {
+           int num = (int)(Math.random()*(9-0+1) + 0);
+           a += num + "";
+        }
+        DNI = Integer.parseInt(a);
+        DNI rand = new DNI(DNI);
+        return rand;
     }
 
     public void imprime() {
