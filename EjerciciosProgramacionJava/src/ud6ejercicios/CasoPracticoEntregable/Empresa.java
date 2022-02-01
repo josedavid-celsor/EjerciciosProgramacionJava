@@ -3,11 +3,13 @@ package ud6ejercicios.CasoPracticoEntregable;
 public class Empresa {
 
     private String nombre, telefono, direccion;
+    private Articulo[] articulos;
 
     public Empresa(String nombre, String telefono, String direccion) {
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
+        this.articulos = new Articulo[100];
     }
 
     public String getNombre() {
