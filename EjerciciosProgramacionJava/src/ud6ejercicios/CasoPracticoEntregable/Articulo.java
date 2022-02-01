@@ -5,12 +5,14 @@ public class Articulo {
     private String nombre;
     private double precio, tipo;
     private final double iva = 0.21;
+    private int cuantos;
     
-    public Articulo(String nombre, double precio, double iva){
+    public Articulo(String nombre, double precio, double iva, int cuantos){
         
             this.nombre = nombre;
             this.precio = precio;
             this.tipo = iva;
+            this.cuantos = cuantos;
     }
     
     public String getNombre() {
