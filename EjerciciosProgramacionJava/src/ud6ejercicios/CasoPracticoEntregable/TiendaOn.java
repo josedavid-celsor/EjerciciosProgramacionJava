@@ -50,6 +50,8 @@ public class TiendaOn {
         articulos[posicion] = x;
 
     }
+    
+    
 
     public void imprime() {
         for (int i = 0; i < articulos.length; i++) {
