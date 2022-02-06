@@ -73,7 +73,7 @@ public class Main {
                         cant = in.nextInt();
                         Articulo a = TOPOPAN.getArticulo(pos);
                         n1.añadirArticuloCarrito(a, cant); 
-                        
+                        TOPOPAN.getArticulo(pos).setCuantos(TOPOPAN.getArticulo(pos).getCuantos() - cant);  
                     }
                     else{
                         System.err.println("No puedes agregar articulos que no existen");
