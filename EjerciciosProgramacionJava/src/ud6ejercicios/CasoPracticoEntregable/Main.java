@@ -28,11 +28,11 @@ public class Main {
         TOPOPAN.añadirArticulo(9, "Camiseta Verde menta", 29.99, 1.15, 10);
         int totalcom = 0;
         int opcion = 0;
-        int pos, cant;
+        int cant, pos;
         int acabar = 1;
         String nc, tfl, direc;
 
-        System.out.println("Bienvenido a nuestra tienda Online TOPOPAN todo mas barato que el pan UwU");
+        System.out.println("Bienvenido a nuestra tienda Online TOPOPAN todo mas barato que el pan ");
         System.out.println("Para poder entrar en la tienda tendras que darme tu nombre ");
         nc = in.nextLine();
         System.out.println("El teléfono");
@@ -68,10 +68,15 @@ public class Main {
                 case 3:
                     System.out.println("Dime la posicion del articulo que te haya llamado la atención para añadirla al carrito");
                     pos = in.nextInt();
-                    System.out.println("Y ahora dime la cantidad de ese objeto que deseas comprar");
-                    cant = in.nextInt();
-                    Articulo a = TOPOPAN.getArticulo(pos);
-                    n1.añadirArticuloCarrito(a, cant);
+                    if (pos < TOPOPAN.getArticulos().length) {
+                        System.out.println("Y ahora dime la cantidad de ese objeto que deseas comprar");
+                        cant = in.nextInt();
+                        Articulo a = TOPOPAN.getArticulo(pos);
+                        n1.añadirArticuloCarrito(a, cant);
+                    }
+                    else{
+                        System.err.println("No puedes agregar articulos que no existen");
+                    }
 
                     break;
                 case 4:
@@ -83,16 +88,16 @@ public class Main {
 
                     break;
                 case 5:
-                    System.out.println("Este es el precio total sin iva de los productos " +n1.CalculoCarro(n1));
+                    System.out.println("Este es el precio total sin iva de los productos " + n1.CalculoCarro(n1));
 
                     break;
                 case 6:
-                    
+
                     System.out.println("Este es el precio total con iva de los productos " + n1.CalculoCarroIva(n1));
-                    
+
                     break;
                 case 7:
-                    
+
                     System.out.println("Han sido removidos de tu cuenta esta cantidad total " + n1.CalculoCarroIva(n1) + "€ , Muchas gracias por comprar en nuestra tienda TOPOPAN!");
 
                     acabar--;

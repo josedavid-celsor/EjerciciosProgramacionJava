@@ -55,7 +55,7 @@ public class Cliente {
             //articulos[posicion].setCuantos(articulos[posicion].getCuantos() + cantidad);
             carrito[contador] = new Articulo(a.getNombre(), a.getPrecio(), a.getIva(), cantidad);
             contador++;
-
+            
             //this.carrito[contador].setCuantos(this.carrito[cantidad].getCuantos() + cantidad);
             //Articliente[contador] += Articliente[contador].getCuantos() + cantidad;   
         }
@@ -63,7 +63,7 @@ public class Cliente {
     }
 
     public void eliminarArticuloCarrito(int posicion, int cantidad) {
-        if (cantidad > this.carrito[posicion].getCuantos()) {
+        if (cantidad > this.carrito[posicion].getCuantos() && posicion < this.carrito.length) {
             System.err.println("No hay esa cantidad, actualmente la cantidad de articulos en tu carrito es de:" + this.carrito[posicion].getCuantos());
         } else {
             this.carrito[posicion].setCuantos(this.carrito[posicion].getCuantos() - cantidad);

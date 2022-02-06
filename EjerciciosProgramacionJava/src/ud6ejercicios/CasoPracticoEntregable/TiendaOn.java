@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ud6ejercicios.CasoPracticoEntregable;
 
-/**
- *
- * @author josed
- */
 public class TiendaOn {
 
     private String nombre, telefono, direccion;
@@ -61,7 +53,7 @@ public class TiendaOn {
 
     public void imprime() {
         for (int i = 0; i < articulos.length; i++) {
-            System.out.println("Nombre: " + articulos[i].getNombre() + " " + "Precio: " + articulos[i].getPrecio() + "€ " + "Iva: " + articulos[i].getIva() + " " + "Cuantos: " + articulos[i].getCuantos());
+            System.out.println(i + " " +  articulos[i].getNombre() + " " + articulos[i].getPrecio() + "€ " + "Iva: " + articulos[i].getIva() + " " + "Stock: " + articulos[i].getCuantos());
         }
     }
 
