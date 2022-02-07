@@ -73,7 +73,7 @@ public class Main {
                         cant = in.nextInt();
                         Articulo a = TOPOPAN.getArticulo(pos);
                         n1.añadirArticuloCarrito(a, cant);
-                        if(cant < TOPOPAN.getArticulo(pos).getCuantos())
+                        if(cant <= TOPOPAN.getArticulo(pos).getCuantos())
                         TOPOPAN.getArticulo(pos).setCuantos(TOPOPAN.getArticulo(pos).getCuantos() - cant);  
                     }
                     else{
