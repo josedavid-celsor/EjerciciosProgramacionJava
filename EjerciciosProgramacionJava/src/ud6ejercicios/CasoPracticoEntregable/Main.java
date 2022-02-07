@@ -72,7 +72,8 @@ public class Main {
                         System.out.println("Y ahora dime la cantidad de ese objeto que deseas comprar");
                         cant = in.nextInt();
                         Articulo a = TOPOPAN.getArticulo(pos);
-                        n1.añadirArticuloCarrito(a, cant); 
+                        n1.añadirArticuloCarrito(a, cant);
+                        if(cant < TOPOPAN.getArticulo(pos).getCuantos())
                         TOPOPAN.getArticulo(pos).setCuantos(TOPOPAN.getArticulo(pos).getCuantos() - cant);  
                     }
                     else{
