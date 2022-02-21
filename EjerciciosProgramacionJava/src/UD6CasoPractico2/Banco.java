@@ -11,7 +11,7 @@ public class Banco {
         cuantos = 0;
     }
 
-    public void ingresarDinero(int posCuenta, double dinero) throws CuentaException{
+    public void ingresarDinero(int posCuenta, double dinero) throws CuentaException {
         if (cuantos > 0) {
             cuentas[posCuenta].ingresarDinero(dinero);
         } else {
@@ -19,11 +19,11 @@ public class Banco {
         }
     }
 
-    public void retirarDinero(int posCuenta, double dinero)throws CuentaException {
+    public void retirarDinero(int posCuenta, double dinero) throws CuentaException {
         cuentas[posCuenta].retirarDinero(dinero);
     }
 
-    public void transferencia(int posCuenta1, int posCuenta2, double dinero) throws CuentaException{
+    public void transferencia(int posCuenta1, int posCuenta2, double dinero) throws CuentaException {
         if (cuentas[posCuenta1].retirarDinero(dinero)) {
             cuentas[posCuenta2].ingresarDinero(dinero);
         }
@@ -76,25 +76,26 @@ public class Banco {
         }
     }
 
-    public void mostrarMorosos(){
+    public void mostrarMorosos() {
         int neg = 0;
         for (int i = 0; i < cuantos; i++) {
             if (cuentas[i].getsaldo() < 0) {
                 System.out.print(i + ". ");
                 cuentas[i].imprimir();
                 neg++;
-            } 
-            if(neg == 0) {
-                 System.err.println("ERROR: No hay cuentas en negativo \n");
-   
             }
+
+        }
+        if (neg == 0) {
+            System.err.println("ERROR: No hay cuentas en negativo \n");
+
         }
     }
 
-    public void imprimirTodos() throws CuentaException{
+    public void imprimirTodos() throws CuentaException {
         if (cuantos == 0) {
-             throw new CuentaException("ERROR: No hay cuentas \n");
-            
+            throw new CuentaException("ERROR: No hay cuentas \n");
+
         } else {
             for (int i = 0; i < cuantos; i++) {
                 System.out.print(i + ". ");

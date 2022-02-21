@@ -53,10 +53,14 @@ public class Main {
                     System.err.println(e.getMessage());
                 } catch (InputMismatchException e) {
                     System.err.println("valor introducido incorrecto");
-                     in.nextLine();
+                    in.nextLine();
+                } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+                    System.err.println("No existe ese numero de cuenta");
+                    in.nextLine();
                 }
 
                 break;
+
                 case 3:
                     try {
                     banco.imprimirTodos();
@@ -69,10 +73,14 @@ public class Main {
                     System.err.println(e.getMessage());
                 } catch (InputMismatchException e) {
                     System.err.println("valor introducido incorrecto");
-                     in.nextLine();
+                    in.nextLine();
+                } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+                    System.err.println("No existe ese numero de cuenta");
+                    in.nextLine();
                 }
 
                 break;
+
                 case 4:
                    try {
                     banco.imprimirTodos();
@@ -87,10 +95,14 @@ public class Main {
                     System.err.println(e.getMessage());
                 } catch (InputMismatchException e) {
                     System.err.println("valor introducido incorrecto");
-                     in.nextLine();
+                    in.nextLine();
+                } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+                    System.err.println("No existe ese numero de cuenta");
+                    in.nextLine();
                 }
 
                 break;
+
                 case 5:
                     try {
                     in.nextLine();
@@ -104,7 +116,7 @@ public class Main {
                     System.err.println(e.getMessage());
                 } catch (InputMismatchException e) {
                     System.err.println("valor introducido incorrecto");
-                     in.nextLine();
+                    in.nextLine();
                 }
 
                 break;
@@ -120,9 +132,13 @@ public class Main {
                 } catch (InputMismatchException e) {
                     System.err.println("valor introducido incorrecto");
                     in.nextLine();
+                } catch (ArrayIndexOutOfBoundsException | NullPointerException e) {
+                    System.err.println("No existe ese numero de cuenta");
+                    in.nextLine();
                 }
 
                 break;
+
                 case 7:
                     in.nextLine();
                     System.out.print("Nombre de la cuenta a buscar: ");

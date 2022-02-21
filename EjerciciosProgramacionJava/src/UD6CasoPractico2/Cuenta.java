@@ -36,7 +36,7 @@ public class Cuenta {
     }
 
     public boolean retirarDinero(double dinero) throws CuentaException {
-        if ((saldo - dinero) >= -100) {
+        if ((saldo - dinero) >= -100 && dinero >= 0) {
             saldo -= dinero;
             return true;
         } else {
