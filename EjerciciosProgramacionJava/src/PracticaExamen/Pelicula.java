@@ -1,4 +1,4 @@
-package universidadjose;
+package PracticaExamen;
 
 public class Pelicula extends Libro {
 

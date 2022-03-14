@@ -1,4 +1,4 @@
-package PracticaExamenAbastos;
+package ExamenAbastos;
 
 public class Pelicula extends Multimedia {
 

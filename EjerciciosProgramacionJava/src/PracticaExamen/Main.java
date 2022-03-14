@@ -1,4 +1,4 @@
-package universidadjose;
+package PracticaExamen;
 
 import java.util.*;
 
